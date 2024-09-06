@@ -4,3 +4,27 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+async-nats = "0.36"
+async-stream = "0.3"
+envconfig = "0.10"
+futures = "0.3"
+redis = { version = "0.26", features = ["tokio-comp", "connection-manager"] }
+tokio = { version = "1.40", features = ["macros", "rt-multi-thread", "signal"] }
+tokio-retry = "0.3.0"
+tokio-stream = "0.1"
+tokio-util = "0.7"
+tracing = { version = "0.1" }
+tracing-subscriber = { version = "0.3", features = ["tracing-log", "fmt"] }
+bytes = "1.7"
+
+[dev-dependencies]
+criterion = { version = "0.5", features = ["async_tokio", "async_futures"] }
+portpicker = "0.1"
+rand = "0.8"
+redis = { version = "0.26", features = ["tokio-comp", "connection-manager"] }
+testcontainers = { version = "0.22", features = ["blocking"] }
+tokio = { version = "1.40", features = ["full"] }
+
+[[bench]]
+harness = false
+name = "bench_pubsubs"
