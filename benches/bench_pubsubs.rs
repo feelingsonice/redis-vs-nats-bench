@@ -130,7 +130,7 @@ fn benchmark_simplex_pubsub_group(c: &mut Criterion) {
         .expect("Redis test container failed to start");
 
     let mut group = c.benchmark_group("PubSub");
-    for i in [10000, 20000, 40000, 80000, 160000] {
+    for i in [10000, 20000, 40000, 80000, 160000, 320000, 640000, 1280000] {
         group.bench_with_input(BenchmarkId::new("NATS", i), &i, |b, i| {
             b.to_async(
                 tokio::runtime::Builder::new_multi_thread()

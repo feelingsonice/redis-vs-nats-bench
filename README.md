@@ -15,65 +15,85 @@ Output:
 ```
 Running benches/bench_pubsubs.rs (target/release/deps/bench_pubsubs-3dbb3970230cf3ea)
 Gnuplot not found, using plotters backend
-PubSub/NATS/10000       time:   [14.644 ms 14.877 ms 15.122 ms]
-                   change: [+2.6226% +4.6496% +6.7751%] (p = 0.00 < 0.05)
-                   Performance has regressed.
+PubSub/NATS/10000       time:   [14.781 ms 15.074 ms 15.435 ms]
+Found 5 outliers among 100 measurements (5.00%)
+3 (3.00%) high mild
+2 (2.00%) high severe
+PubSub/Redis/10000      time:   [24.060 ms 24.228 ms 24.403 ms]
+Found 4 outliers among 100 measurements (4.00%)
+4 (4.00%) high mild
+PubSub/NATS/20000       time:   [26.769 ms 27.149 ms 27.531 ms]
 Found 1 outliers among 100 measurements (1.00%)
 1 (1.00%) high mild
-PubSub/Redis/10000      time:   [23.700 ms 23.780 ms 23.864 ms]
-                   change: [-0.6224% -0.1605% +0.3480%] (p = 0.53 > 0.05)
-                   No change in performance detected.
-Found 1 outliers among 100 measurements (1.00%)
-1 (1.00%) high mild
-PubSub/NATS/20000       time:   [28.350 ms 29.199 ms 30.145 ms]
-                   change: [+0.4194% +3.5884% +7.0454%] (p = 0.05 < 0.05)
-                   Change within noise threshold.
-Found 7 outliers among 100 measurements (7.00%)
-5 (5.00%) high mild
-2 (2.00%) high severe
-PubSub/Redis/20000      time:   [46.006 ms 46.195 ms 46.402 ms]
-                   change: [-62.494% -36.190% -1.5830%] (p = 0.22 > 0.05)
-                   No change in performance detected.
-Found 3 outliers among 100 measurements (3.00%)
-1 (1.00%) high mild
-2 (2.00%) high severe
+PubSub/Redis/20000      time:   [46.730 ms 47.051 ms 47.403 ms]
+Found 6 outliers among 100 measurements (6.00%)
+2 (2.00%) high mild
+4 (4.00%) high severe
 Benchmarking PubSub/NATS/40000: Warming up for 3.0000 s
 Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 5.4s, or reduce sample count to 90.
-PubSub/NATS/40000       time:   [57.722 ms 59.219 ms 60.732 ms]
-                   change: [-1.2574% +1.8824% +5.1286%] (p = 0.25 > 0.05)
-                   No change in performance detected.
+PubSub/NATS/40000       time:   [53.435 ms 54.671 ms 55.926 ms]
 Found 1 outliers among 100 measurements (1.00%)
 1 (1.00%) high mild
 Benchmarking PubSub/Redis/40000: Warming up for 3.0000 s
-Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 10.0s, or reduce sample count to 50.
-PubSub/Redis/40000      time:   [95.212 ms 96.253 ms 97.346 ms]
-                   change: [+3.5573% +4.7225% +5.9274%] (p = 0.00 < 0.05)
-                   Performance has regressed.
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 9.2s, or reduce sample count to 50.
+PubSub/Redis/40000      time:   [91.770 ms 92.096 ms 92.432 ms]
+Found 1 outliers among 100 measurements (1.00%)
+1 (1.00%) high severe
 Benchmarking PubSub/NATS/80000: Warming up for 3.0000 s
-Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 12.6s, or reduce sample count to 30.
-PubSub/NATS/80000       time:   [118.96 ms 121.24 ms 123.52 ms]
-                   change: [-2.8650% -0.3665% +2.1245%] (p = 0.77 > 0.05)
-                   No change in performance detected.
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 12.0s, or reduce sample count to 40.
+PubSub/NATS/80000       time:   [119.13 ms 120.92 ms 122.66 ms]
 Benchmarking PubSub/Redis/80000: Warming up for 3.0000 s
-Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 18.4s, or reduce sample count to 20.
-PubSub/Redis/80000      time:   [183.41 ms 184.30 ms 185.26 ms]
-                   change: [-2.4886% -1.8251% -1.2053%] (p = 0.00 < 0.05)
-                   Performance has improved.
-Found 7 outliers among 100 measurements (7.00%)
-4 (4.00%) high mild
-3 (3.00%) high severe
-Benchmarking PubSub/NATS/160000: Warming up for 3.0000 s
-Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 24.8s, or reduce sample count to 20.
-PubSub/NATS/160000      time:   [251.08 ms 254.34 ms 257.60 ms]
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 18.5s, or reduce sample count to 20.
+PubSub/Redis/80000      time:   [185.04 ms 186.09 ms 187.23 ms]
 Found 14 outliers among 100 measurements (14.00%)
-1 (1.00%) low severe
+8 (8.00%) high mild
+6 (6.00%) high severe
+Benchmarking PubSub/NATS/160000: Warming up for 3.0000 s
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 25.0s, or reduce sample count to 20.
+PubSub/NATS/160000      time:   [247.65 ms 250.28 ms 252.80 ms]
+Found 14 outliers among 100 measurements (14.00%)
+2 (2.00%) low severe
 6 (6.00%) low mild
 5 (5.00%) high mild
-2 (2.00%) high severe
+1 (1.00%) high severe
 Benchmarking PubSub/Redis/160000: Warming up for 3.0000 s
-Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 36.8s, or reduce sample count to 10.
-PubSub/Redis/160000     time:   [371.26 ms 373.88 ms 376.81 ms]
-Found 9 outliers among 100 measurements (9.00%)
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 38.7s, or reduce sample count to 10.
+PubSub/Redis/160000     time:   [369.94 ms 372.33 ms 375.07 ms]
+Found 8 outliers among 100 measurements (8.00%)
+6 (6.00%) high mild
+2 (2.00%) high severe
+Benchmarking PubSub/NATS/320000: Warming up for 3.0000 s
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 48.8s, or reduce sample count to 10.
+PubSub/NATS/320000      time:   [478.45 ms 482.20 ms 485.74 ms]
+Found 1 outliers among 100 measurements (1.00%)
+1 (1.00%) low mild
+Benchmarking PubSub/Redis/320000: Warming up for 3.0000 s
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 72.3s, or reduce sample count to 10.
+PubSub/Redis/320000     time:   [733.10 ms 736.23 ms 739.88 ms]
+Found 7 outliers among 100 measurements (7.00%)
+3 (3.00%) high mild
+4 (4.00%) high severe
+Benchmarking PubSub/NATS/640000: Warming up for 3.0000 s
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 92.3s, or reduce sample count to 10.
+PubSub/NATS/640000      time:   [942.20 ms 950.49 ms 959.19 ms]
+Found 1 outliers among 100 measurements (1.00%)
+1 (1.00%) high mild
+Benchmarking PubSub/Redis/640000: Warming up for 3.0000 s
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 149.0s, or reduce sample count to 10.
+PubSub/Redis/640000     time:   [1.4456 s 1.4519 s 1.4582 s]
+Found 5 outliers among 100 measurements (5.00%)
+1 (1.00%) low severe
 4 (4.00%) high mild
-5 (5.00%) high severe
+Benchmarking PubSub/NATS/1280000: Warming up for 3.0000 s
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 181.9s, or reduce sample count to 10.
+PubSub/NATS/1280000     time:   [1.8186 s 1.8281 s 1.8381 s]
+Found 2 outliers among 100 measurements (2.00%)
+2 (2.00%) high mild
+Benchmarking PubSub/Redis/1280000: Warming up for 3.0000 s
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 288.9s, or reduce sample count to 10.
+PubSub/Redis/1280000    time:   [2.8791 s 2.8878 s 2.8967 s]
+Found 8 outliers among 100 measurements (8.00%)
+1 (1.00%) low mild
+6 (6.00%) high mild
+1 (1.00%) high severe
 ```
