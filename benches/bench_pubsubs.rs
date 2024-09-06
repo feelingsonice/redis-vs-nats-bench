@@ -112,7 +112,7 @@ async fn bench_nats_pubsub(msg_count: usize) {
     pull_task.await.unwrap();
 }
 
-fn benchmark_simplex_pubsub_group(c: &mut Criterion) {
+fn benchmark_pubsub_group(c: &mut Criterion) {
     let nats_port = portpicker::pick_unused_port().expect("No ports free");
     std::env::set_var::<&str, &str>("NATS_PORT", &nats_port.to_string());
     let _nats_container = GenericImage::new("nats", "2.10")
@@ -140,8 +140,6 @@ fn benchmark_simplex_pubsub_group(c: &mut Criterion) {
                     .unwrap(),
             )
             .iter(|| bench_nats_pubsub(*i));
-
-            // b.iter(|| fibonacci_slow(*i));
         });
 
         group.bench_with_input(BenchmarkId::new("Redis", i), &i, |b, i| {
@@ -158,5 +156,5 @@ fn benchmark_simplex_pubsub_group(c: &mut Criterion) {
     group.finish();
 }
 
-criterion_group!(benches, benchmark_simplex_pubsub_group);
+criterion_group!(benches, benchmark_pubsub_group);
 criterion_main!(benches);

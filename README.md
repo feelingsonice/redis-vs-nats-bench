@@ -1,4 +1,14 @@
-# Result
+# Becnhmarking Redis pubsub vs NATS pubsub
+
+This is a benchmark comparing the performance of Redis pubsub vs NATS pubsub.
+
+Benchmarked on `redis:7.4` vs `nats:2.10` docker images using [`redis-rs`](https://github.com/redis-rs/redis-rs) and [`async-nats`](https://github.com/nats-io/nats.rs) crates.
+
+The setup is a single subscriber that's subscribed to a single channel. On the publishing side, the publisher is bombarded with `N` messages at the same time. It does not take into account w/e the underlying client implementations are doing.
+
+`[10000, 20000, 40000, 80000, 160000, 320000, 640000, 1280000]` messages were published.
+
+## Result
 
 Date: `2024-09-05`
 
