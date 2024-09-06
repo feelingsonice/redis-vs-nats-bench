@@ -1,4 +1,4 @@
-# Becnhmarking Redis pubsub vs NATS pubsub
+# Benchmarking Redis pubsub vs NATS pubsub
 
 This is a benchmark comparing the performance of Redis pubsub vs NATS pubsub.
 
